@@ -23,7 +23,7 @@ module Sinatra
       end
       
       unless defined?(Rake) || [:test, :production].include?(app.settings.environment)
-        ActiveRecord::Base.logger = Logger.new(STDOUT)
+        ActiveRecord::Base.logger = ::Logger.new(STDOUT)
       end
 
       app.helpers ActiveRecordHelper
